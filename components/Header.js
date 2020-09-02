@@ -20,10 +20,10 @@ class Header extends Component {
                         <Link href="/index"><a>Home</a></Link>
                     </li>
                     <li>
-                    <Link href="/about"><a>About</a></Link>
+                        <Link href="/about"><a>About</a></Link>
                     </li>
                     <li>
-                        <a href="contribute.html">Contribute</a>
+                        <Link href="/contribute"><a>Contribute</a></Link>
                     </li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
