@@ -32,13 +32,6 @@ class Header extends Component {
                     <li>
                         <Link href="/login"><a>Login</a></Link>
                     </li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
-						<ul class="dropdown-menu" aria-labelledby="about-us">
-							<li><Link href="/login"><a>Login</a></Link></li>
-							<li><a href="register.html">Register</a></li>
-						</ul>
-					</li>
                 </ul>
             </div>
 

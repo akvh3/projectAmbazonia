@@ -29,7 +29,7 @@ class Login extends Component {
 
   <div class="container" >
     <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw"><a href="register.html"> New user?</a></span>
+    <Link href="/register"><span class="psw"><a> New user?</a></span></Link>
   </div>
 
   </form>
