@@ -8,8 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
+    "file-loader": "^6.1.0",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.44.1"
   }
 }
