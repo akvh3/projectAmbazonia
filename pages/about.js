@@ -6,7 +6,7 @@ class About extends Component {
   render() {
   return (
     <>
-    <Head><title>Orphan Connect - Home</title></Head>
+    <Head><title>Orphan Connect - About</title></Head>
     <div class="jumbotron feature center">
 		<div class="container">
             <h2 class="center">About Project Ambazonia</h2>
