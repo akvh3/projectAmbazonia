@@ -2,14 +2,19 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component } from 'react';
 
+
 class Donate extends Component {
+    constructor(props) {
+        super(props);
+        // this.state = { name: this.props.location.state.name, age: this.props.location.state.age, image: this.props.location.state.image };
+      }
   render() {
   return (
     <>
     <Head><title>Orphan Connect - Donate</title></Head>
     <div class="jumbotron feature center">
 		<div class="container">
-            <h2 class="center" align="center">Donation Page</h2>
+        <h2 class="center" align="center">{oName}</h2>
             <br></br>
             <img src="/placeholde.jpg" class="i-left"></img>
             <p align="center"> 
@@ -44,4 +49,12 @@ class Donate extends Component {
     )
   }
 }
+
+export const attributes = (name,age,image)=>{
+    const oName = name;
+    const oAge = age;
+    const oImage = image;
+}
+
 export default Donate;
+
