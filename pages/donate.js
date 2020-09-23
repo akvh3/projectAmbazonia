@@ -3,15 +3,15 @@ import Link from 'next/link'
 import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 
-function donate({ router: { query } }) {
-    const name = JSON.parse(query.Name);
-    const age = JSON.parse(query.Age);
-    const image = JSON.parse(query.image);
-}
+// function donate({ router: { query } }) {
+//     const name = JSON.parse(query.Name);
+//     const age = JSON.parse(query.Age);
+//     const image = JSON.parse(query.image);
+// }
 class Donate extends Component {
     constructor(props) {
         super(props);
-        donate();
+        // donate();
         // this.state = { name: this.props.location.state.name, age: this.props.location.state.age, image: this.props.location.state.image };
       }
   render() {
@@ -20,7 +20,7 @@ class Donate extends Component {
     <Head><title>Orphan Connect - Donate</title></Head>
     <div class="jumbotron feature center">
 		<div class="container">
-            <h2 class="center" align="center">{name} Donation Page</h2>
+            <h2 class="center" align="center">Donation Page</h2>
             <br></br>
             <img src="/placeholde.jpg" class="i-left"></img>
             <p align="center"> 
