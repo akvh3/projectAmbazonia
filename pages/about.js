@@ -9,7 +9,7 @@ class About extends Component {
     <Head><title>Orphan Connect - About</title></Head>
     <div class="jumbotron feature center">
 		<div class="container">
-            <h2 class="center">About Project Ambazonia</h2>
+            <h2 class="center">About Orphan Connect</h2>
             <br></br>
             <img src="/azemblem.jpg" class="i-left"></img>
             <img src="/azmap.png" class="i-right"></img>

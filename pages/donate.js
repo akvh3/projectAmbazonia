@@ -1,8 +1,19 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component } from 'react';
+import { withRouter } from 'next/router';
 
+// function donate({ router: { query } }) {
+//     const name = JSON.parse(query.Name);
+//     const age = JSON.parse(query.Age);
+//     const image = JSON.parse(query.image);
+// }
 class Donate extends Component {
+    constructor(props) {
+        super(props);
+        // donate();
+        // this.state = { name: this.props.location.state.name, age: this.props.location.state.age, image: this.props.location.state.image };
+      }
   render() {
   return (
     <>
@@ -44,4 +55,12 @@ class Donate extends Component {
     )
   }
 }
+
+export const attributes = (name,age,image)=>{
+    const oName = name;
+    const oAge = age;
+    const oImage = image;
+}
+
 export default Donate;
+
