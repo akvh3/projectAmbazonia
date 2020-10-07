@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component, useState, useEffect } from 'react';
 import { useRouter } from "next/router";
-import {storage, firestore} from '.././firebase/config.js';
+import {storage, firestore} from '../.././firebase/config.js';
 
 export default () => {
   const router = useRouter();
   const [orphanInfo, setOrphanInfo] = useState()
   const orphanId = router.query.id
-  
+
   useEffect(() => {
     const orphanId = router.query.id
     if (typeof orphanId != "undefined") {
@@ -47,6 +47,7 @@ export default () => {
             <ul align="center" class="i-center">
                 <li>{orphanInfo? <p>The victim is {orphanInfo.Age} years old</p>: <p>Dummy Info</p>}</li>
                 <li>{orphanInfo? <p>The victim has received ${orphanInfo.donation_total} in donations.</p>: <p>Dummy Info</p>}</li>
+                <li>{orphanInfo? <p>You have chosen to sponsor {orphanInfo.Name} with $10 monthly.</p>: <p>Dummy Info</p>}</li>
             </ul>
         </div>
     </div>
