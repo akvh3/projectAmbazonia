@@ -10,6 +10,7 @@ class Home extends Component {
     <div class="jumbotron feature">
 		<div class="container">
             <h1 class="center" align="center">Orphan Connect</h1>
+
             <br></br>
             <img src="/azflag.png" class="center"></img>
 		</div>
@@ -26,7 +27,7 @@ class Home extends Component {
 
         <div class="row">
             <br></br>
-            <Link href="/about"><button type="button" onclick="location.href=about'" class="center button-class">About Page</button></Link>
+            <Link href="/about"><button type="button" class="center button-class">About Page</button></Link>
             <br></br>
             <br></br>
             <button type="button" onclick="location.href='contribute.html'" class="center button-class">Contribute Page</button>
