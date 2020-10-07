@@ -49,7 +49,7 @@ class Contribute extends Component {
                       <p class="card-text">{orphan.Name} is {orphan.Age} years old and has received ${orphan.donation_total} in donations. </p>
                       <Link href="/donate/[id]" as={"/donate/" + orphan.id}><button type="button" class="button-class i-left">Donate</button></Link>
                       <div class="dropdown">
-                        <button>Adoption Plan</button>
+                        <button type="button" class="button-class">Adoption Plan</button>
                         <div class="dropdown-content">
                           <Link href="/adopt/a01/[id]" as={"/adopt/a01/" + orphan.id}><a id="a01">$1</a></Link>
                           <Link href="/adopt/a02/[id]" as={"/adopt/a02/" + orphan.id}><a id="a02">$2</a></Link>
