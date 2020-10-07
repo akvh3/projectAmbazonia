@@ -29,7 +29,7 @@ class Home extends Component {
             <Link href="/about"><button type="button" class="center button-class">About Page</button></Link>
             <br></br>
             <br></br>
-            <button type="button" onclick="location.href='contribute.html'" class="center button-class">Contribute Page</button>
+            <Link href="/contribute"><button type="button" class="center button-class">Contribute Page</button></Link>
             <br></br>
             <br></br>
         </div>
