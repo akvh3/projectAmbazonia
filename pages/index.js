@@ -9,7 +9,7 @@ class Home extends Component {
     <Head><title>Orphan Connect - Home</title></Head>
     <div class="jumbotron feature">
 		<div class="container">
-            <h1 class="center">Project Ambazonia</h1>
+            <h1 class="center" align="center">Orphan Connect</h1>
             <br></br>
             <img src="/azflag.png" class="center"></img>
 		</div>
