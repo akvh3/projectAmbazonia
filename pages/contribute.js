@@ -9,8 +9,13 @@ class Contribute extends Component {
     super(props);
     this.state = {
       orphansList : [],
-      images : [],
+      search: null,
     };
+  }
+
+  searchSpace=(event)=>{
+    let keyword = event.target.value;
+    this.setState({search:keyword})
   }
 
   //When the page loads, bring up the orphan data from firebase.
@@ -28,11 +33,17 @@ class Contribute extends Component {
 
   render() {
     const { orphansList } = this.state;
-    const orphans = orphansList.map(orphan => (
+    const orphans = orphansList.filter((data) => {
+        if(this.state.search == null) {
+          return data
+        } else if (data.Name.toLowerCase().includes(this.state.search.toLowerCase())) {
+          return data
+        }
+    }).map(orphan => (
       <div class="card">
         <div class="card-img-body">
           <img class="card-img" src={orphan.image} alt="Card image cap"></img>
-        </div>
+        </div>  
         <div class="card-body">
           <h4 class="card-title">{orphan.Name}</h4>
           <p class="card-text">{orphan.Name} is {orphan.Age} years old and has received ${orphan.donation_total} in donations. </p>
@@ -50,7 +61,7 @@ class Contribute extends Component {
           </div>
         </div>
       </div>
-    ))
+    ))  
 
   return (
     <>
@@ -58,8 +69,15 @@ class Contribute extends Component {
     <div id="page" class="site">
     
         <h2 align="center" class="i-center">Contribute</h2>
-            <Link href="/donate"><button type="button" class="center button-class">General Donation</button></Link>
-            <br></br>
+        <br></br>
+        <Link href="/donate"><button type="button" class="center button-class">General Donation</button></Link>
+        <br></br>
+        <br></br>
+        <div class="center">
+          <input type="text" class="form-control" placeholder="Search for orphans by name..." onChange={(e)=>this.searchSpace(e)} />
+        </div>
+        <br></br>
+        <br></br>
         <div class="container">
             <div class="card-group vgr-cards">
                 {orphans}
