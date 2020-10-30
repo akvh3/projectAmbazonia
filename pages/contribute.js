@@ -70,7 +70,7 @@ class Contribute extends Component {
     
         <h2 align="center" class="i-center">Contribute</h2>
         <br></br>
-        <Link href="/donate"><button type="button" class="center button-class">General Donation</button></Link>
+        <Link href="/donate"><button type="button" class="center button-class donation-button">General Donation</button></Link>
         <br></br>
         <br></br>
         <div class="center">
@@ -78,7 +78,7 @@ class Contribute extends Component {
         </div>
         <br></br>
         <br></br>
-        <div class="container">
+        <div  class="container">
             <div class="card-group vgr-cards">
                 {orphans}
             </div>
