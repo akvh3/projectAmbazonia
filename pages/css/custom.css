@@ -38,6 +38,14 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: auto;
 	width: 50%;
   }
+
+.amount-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	text-align:center;
+}
 .tab-center {
 	margin-left: 405px;
 }
