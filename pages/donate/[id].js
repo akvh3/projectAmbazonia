@@ -49,7 +49,12 @@ export default () => {
               const order = await actions.order.capture();
               
               setPaidFor(true);
-
+              setLoaded(false);
+              firestore.collection('orphans')
+              .doc(orphanId)
+              .update({
+                "donation_total": parseFloat(orphanInfo.donation_total) + parseFloat(donationAmount)
+              })
               console.log(order)
             },
             onError: err => {
@@ -77,13 +82,12 @@ export default () => {
           }
       });
     }
-  }, []);
-  if (orphanInfo) {
-    console.log(orphanInfo.image)
-  } else{
-    console.log(1)
-  }
-
+  }, [paidFor]);
+  // if (orphanInfo) {
+  //   console.log(orphanInfo.image)
+  // } else{
+  //   console.log(1)
+  // }
 
   return (
     <>
@@ -105,7 +109,7 @@ export default () => {
                 <li>{orphanInfo? <p>The victim has received ${orphanInfo.donation_total} in donations.</p>: <p>Dummy Info</p>}</li>
             </ul> */}
             <div align="center">
-              <p>{orphanInfo? <p>{orphanInfo.Name} is {orphanInfo.Age} years old</p>: <p>Dummy Info</p>}</p>
+              {orphanInfo? <p>{orphanInfo.Name} is {orphanInfo.Age} years old</p>: <p>Dummy Info</p>}
               {orphanInfo? <p>The victim has received ${orphanInfo.donation_total} in donations.</p>: <p>Dummy Info</p>}
             </div>
         </div>
@@ -116,13 +120,14 @@ export default () => {
         <div class="row">
             <div class="col-lg-12">
                 <h3 align="center">How much would you like to donate? (USD $)</h3>
-                <input class="amount-center" type="number" name="donation" onChange={handleAmountSubmit}></input>
+                <input class="amount-center" value={donationAmount} type="number" name="donation" onChange={handleAmountSubmit}></input>
                 <h4 align="center">Your current donation amount is {donationAmount} US dollars</h4>
                 <br></br>
                 <h2 class="page-header" align="center">Enter Payment Information</h2>
                 {paidFor ? (
-                  <div>
+                  <div align="center">
                     <h1>Thank you for your donation!</h1>
+                    <div align="center" ref={v => (paypalRef = v)} />
                   </div>
                 ) : (
                   <div>
