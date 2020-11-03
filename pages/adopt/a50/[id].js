@@ -59,11 +59,7 @@ export default () => {
                 <h3 align="center">Donation Total</h3>
                 <input class="center" type="text" id="fname" name="fname"></input><br></br>
                 <h2 class="page-header" align="center">Enter Payment Information</h2>
-                <img height="259" width="259" class="center" src="/paypal.png"></img>
-                <button type="button" class="i-center center button-class">Pay with PayPal</button>
-                <br></br>
-                <br></br>
-                <button type="button" class="i-center center button-class">Submit</button>
+
                 <br></br>
             </div>
         </div>

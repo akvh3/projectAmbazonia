@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { Component, useState, useEffect, useRef } from 'react';
 import { useRouter } from "next/router";
 import {storage, firestore} from '.././firebase/config.js';
+import GooglePayButton from '@google-pay/button-react';
 
 export default () => {
   const router = useRouter();
@@ -67,6 +68,41 @@ export default () => {
     }
   }, [loaded])
 
+  const paymentRequest = {
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA'],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId',
+          },
+        },
+      },
+    ],
+    merchantInfo: {
+      merchantId: 'BCR2DN6TZOMZ57AL',
+      merchantName: 'Orphan Connect',
+    },
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '3',
+      currencyCode: 'USD',
+      countryCode: 'US',
+    },
+  };
+
+  function handleLoadPaymentData(paymentData) {
+  	console.log('load payment data', paymentData);
+  }
 
   useEffect(() => {
     const orphanId = router.query.id
@@ -135,15 +171,18 @@ export default () => {
                   </div>
                 )}
 
-                <img height="259" width="259" class="center" src="/paypal.png"></img>
-                <button type="button" class="i-center center button-class">Pay with PayPal</button>
                 <br></br>
                 <br></br>
-                <button type="button" class="i-center center button-class">Submit</button>
-                <br></br>
+                <center><GooglePayButton
+                  environment="TEST"
+                  paymentRequest={paymentRequest}
+                  onLoadPaymentData={handleLoadPaymentData}
+                /></center>
+                <br></br><br></br>
+                <Link href="http://cash.app/$andrewvh1"><button type="button" class="i-center center button-class">Pay with Cashapp</button></Link>
+                <br></br><br></br>
             </div>
         </div>
-
     </div>
     </>
   );
