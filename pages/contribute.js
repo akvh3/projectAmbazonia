@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import {storage, firestore} from './firebase/config.js';
 import {attributes} from './donate';
 
+
+
 class Contribute extends Component {
   constructor(props) {
     super(props);
