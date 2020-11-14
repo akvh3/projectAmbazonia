@@ -83,11 +83,6 @@ export default () => {
       });
     }
   }, [paidFor]);
-  // if (orphanInfo) {
-  //   console.log(orphanInfo.image)
-  // } else{
-  //   console.log(1)
-  // }
 
   return (
     <>
