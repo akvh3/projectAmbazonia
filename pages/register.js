@@ -2,19 +2,21 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component } from 'react';
 import {authMethods} from './firebase/authMethods.js'
-import {auth} from './firebase/config.js'
 
 class Register extends Component {
   constructor(props) {
     super(props)
     this.state = {
       email : "",
-      password : ""
+      password : "",
+      showSignupMessage: false
     }
   }
 
-  handleSignup = () => {
+  handleSignup = (e) => {
+    e.preventDefault()
     authMethods.signup(this.state.email , this.state.password)
+    this.setState({showSignupMessage: true})
   }
 
   handleEmailChange = e => {
@@ -33,10 +35,19 @@ class Register extends Component {
     <div align="center "id="page" class="site">
       <h2 align="center">New User Signup Form</h2>
       <br></br>
+      {this.state.showSignupMessage? (
+        <div>
+          <h4>Your account was created successfully.</h4>
+          <br></br>
+          <Link href="/login"><span class="psw"><a>Go back to log in</a></span></Link>
+        </div>
+      ) : (
+        <h4>please create your account</h4>
+      )}
+      
 
       <form onSubmit={this.handleSignup}>
         <div class="container">
-          <h4>Credentials:</h4>
           {/* <label for="fname"><b>Full Name</b></label>
           <input type="text" placeholder="Enter Full Name" name="name" required />
           <br></br>
@@ -56,9 +67,6 @@ class Register extends Component {
           {/* <Link href="/login"><button type="submit">Register</button></Link> */}
         </div>
 
-        <div class="container">
-          <button type="button" class="cancelbtn">Cancel</button>
-        </div>
         <Link href="/login"><span class="psw"><a>Existing user?</a></span></Link>
       </form>
     </div>
