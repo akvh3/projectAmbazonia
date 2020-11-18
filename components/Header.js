@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
 import Link from 'next/link'
 import styles from './header.module.css'
+import {auth} from '../pages/firebase/config.js'
+import {authMethods} from '../pages/firebase/authMethods.js'
 // import '../pages/css/custom.css'
 // import '../pages/css/bootstrap.css'
 // import '../pages/css/bootstrap.min.css'
 
 class Header extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentUser: "",
+            userSignedIn: false
+        }
+    }
+
+    handleSignOut = e => {
+        authMethods.signout()
+        this.setState({userSignedIn: false})
+    }
+    componentDidMount() {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({currentUser : user})
+                this.setState({userSignedIn: true})
+            } else {
+                this.setState({userSignedIn: false})
+            }
+        })
+        // var userNow= auth.currentUser;
+        // if (userNow) {
+        //     this.setState({currentUser: userNow})
+        //     console.log("hello world")
+        //     console.log(this.state.currentUser)
+        // } else {
+        //     console.log("nono")
+        // }
+    }
+
     render() {
         return (
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -33,6 +66,25 @@ class Header extends Component {
                         <Link href="/login"><a>Login</a></Link>
                     </li>
                 </ul>
+                {this.state.userSignedIn ? (
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a>Logged in {this.state.currentUser.email}</a>
+                        </li>
+                        <li>
+                            <a onClick={this.handleSignOut}>Sign out</a>
+                        </li>
+                    </ul>
+                ) : (
+                    <ul class="nav navbar-nav navbar-right">
+                        {/* <li>
+                            <a>Logged in asasdasm</a>
+                        </li> */}
+                        {/* <li>
+                            <a onClick={this.handleSignOut}>Sign out</a>
+                        </li> */}
+                    </ul>
+                )}
             </div>
 
         </div>
