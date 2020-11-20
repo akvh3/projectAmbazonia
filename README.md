@@ -3,9 +3,20 @@ Website that connects generous benefactors and Ambazonians in need.
 
 Team Ambazonia (JIC 0124) - Andrew von Hillebrandt, Sam Jang, Jacob Gorman, Carson Duerr, Noah Hammond
 
-## Release Notes
+## Release Notes Orphan Connect V1.0
 
-TODO: Finish up release Notes
+### Latest Features
+
+Todo
+
+### Bug Fixes
+
+Todo
+
+### Known Bugs
+
+Todo
+
 
 ## Development / Installation Guide
 
@@ -86,3 +97,5 @@ However, this is running the production build which mirrors what it would look l
 
     - If git fails to give the version number, most likely, it's the same problem as above. ([Adding git to Path](https://stackoverflow.com/questions/26620312/git-installing-git-in-path-with-github-client-for-windows))
 
+### Learn More
+- [Deploying Nextjs/Reactjs Project](https://nextjs.org/docs/deployment)
