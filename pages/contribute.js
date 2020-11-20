@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component } from 'react'
-import {storage, firestore} from './firebase/config.js';
+import {storage, firestore} from '../services/firebase/config.js';
 import {attributes} from './donate';
 
 

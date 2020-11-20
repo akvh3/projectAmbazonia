@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component, useState, useEffect, useRef } from 'react';
 import { useRouter } from "next/router";
-import {storage, firestore} from '.././firebase/config.js';
+import {storage, firestore} from '../../services/firebase/config.js';
 
 export default () => {
   const router = useRouter();

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { Component } from 'react';
-import {authMethods} from './firebase/authMethods.js'
+import {authMethods} from '../services/firebase/authMethods.js'
 
 class Register extends Component {
   constructor(props) {

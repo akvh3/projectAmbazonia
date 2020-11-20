@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Link from 'next/link'
 import styles from './header.module.css'
-import {auth} from '../pages/firebase/config.js'
-import {authMethods} from '../pages/firebase/authMethods.js'
-// import '../pages/css/custom.css'
-// import '../pages/css/bootstrap.css'
-// import '../pages/css/bootstrap.min.css'
+import {auth} from '../services/firebase/config.js'
+import {authMethods} from '../services/firebase/authMethods.js'
 
 class Header extends Component {
     constructor(props) {
