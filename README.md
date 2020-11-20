@@ -7,16 +7,22 @@ Team Ambazonia (JIC 0124) - Andrew von Hillebrandt, Sam Jang, Jacob Gorman, Cars
 
 ### Latest Features
 
-Todo
+- Users can be informed about what is going on in Ambazonia.
+- Users can browse through the list of orphans and read about their status.
+- Users can choose to make a one time donation via Paypal or debit/credit cards.
+- Users can choose to make a recurring donation (Adopt/Subscribe) via Paypal or debit/credit cards.
+- Users can choose to make a general donation for the overall cause.
+- Users can make a simple accuont and sign in.
 
 ### Bug Fixes
 
-Todo
+- Fixed a bug where making an account refreshes the page and all the components inside it.
+- Fixed a bug where 'Thank you' message does not appear after a donation is completed.
 
 ### Known Bugs
 
-Todo
-
+- Refreshing the page on a donate page will populate the page into default dummy information.
+- Upon completing the donation, the total donation amount for an orphan sometimes forgets to update.
 
 ## Development / Installation Guide
 
@@ -49,6 +55,8 @@ To install them, run:
     npm install
     
 inside the root project directory.
+
+For your reference, the complete list of depencies can be found in `package.json` file.
 
 ### Running the Project
 After all dependencies are installed, you can finally run the project locally.
@@ -99,3 +107,4 @@ However, this is running the production build which mirrors what it would look l
 
 ### Learn More
 - [Deploying Nextjs/Reactjs Project](https://nextjs.org/docs/deployment)
+- [How Paypal API works](https://developer.paypal.com/docs/api/overview/)
