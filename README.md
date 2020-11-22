@@ -22,6 +22,7 @@ Team Ambazonia (JIC 0124) - Andrew von Hillebrandt, Sam Jang, Jacob Gorman, Cars
 ### Known Bugs
 
 - Refreshing the page on a donate page will populate the page into default dummy information.
+- Sometimes navigating back and forth between a specific donate page will populate the page with default dummy information.
 - Upon completing the donation, the total donation amount for an orphan sometimes forgets to update.
 
 ## Development / Installation Guide
